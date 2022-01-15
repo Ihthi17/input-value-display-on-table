@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <style>
+        body{
+            background-image: linear-gradient(to left, rgba(255,0,0,0), rgba(255,0,0,1));
+           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        table{
+            background-color: black;
+            color: white;
+            padding: 5px;
+            
+            
+        }
+        .btn2{
+           
+            cursor: pointer;
+            color: red;
+            
+        }
+        .container{
+          background-color: #D3D3D3;
+          width: 350px;
+          overflow: auto;
+          height: 400px;
+          align-content:center ;
+         margin-top: 80px;
+         border-radius: 20px;
+        }
+        .btn1{
+           background-color: blue;
+           color: white;
+           cursor: pointer;
+           width: 80px;
+           height: 25px;
+           border-radius: 10px;
+
+        }
+        h1{
+           text-shadow: 2px 2px black;
+           color:#325fa8 ;
+          
+        }
+    </style>
+    <script src="jquery.js"></script>
+</head>
+<body>
+   <center> <div class="container">
+    <h1 style="text-align:center ;">Add the value display on table</h1>
+
+        <label>Fname:</label><input type="text" class="n1"  autocomplete="off" placeholder="First name"/><br><br>
+        <label>Lname:</label> <input type="text" class="n2"   autocomplete="off" placeholder="Last name"/><br><br>
+        <label>Age   :</label> <input type="text" class="age"  autocomplete="off" placeholder="Age"/><br><br>
+        <button type="button" class="btn1">Add</button><br><br>
+        <table border="1" >
+           <tr>
+               <th >Fname</th>
+               <th>Lname</th>
+               <th>Age</th>
+               <th>Action</th>
+           </tr>
+
+            
+        </table >
+    </div>
+   </center>
+   <script>
+    $(document).ready(function(){
+   $('.btn1').click(function(){
+     
+           var n1 = $('.n1').val();
+           var n2 = $('.n2').val();
+           var age = $('.age').val();
+            $("table").append('<tr><td>' + n1 +'</td><td>'+ n2 +'</td><td>' + age +'</td><td><button class="btn2"><i class="fas fa-trash-alt"></i></button></td></tr>');
+           
+       });
+        $("table").on('click','.btn2',function(){
+            $(this).parents('tr').remove();
+        
+               
+     });  
+    
+});
+  
+
+   
+</script>
+</body>
+</html>
